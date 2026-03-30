@@ -1,0 +1,8 @@
+﻿@import "tailwindcss";
+
+/* Keep your custom body styles below the import */
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background-color: #f9fafb;
+}
