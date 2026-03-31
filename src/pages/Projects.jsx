@@ -17,8 +17,8 @@ const Projects = () => {
       title: "Travel List App",
       description:
         "Mobile-responsive travel app for planning trips and discovering destinations.",
-      // UPDATED PATH HERE
-      image: `${import.meta.env.BASE_URL}images/Travel_image.png`,
+      // UPDATED: Path simplified for Vercel
+      image: "/images/Travel_image.png",
       github: "https://github.com/Anuoluwapofm/Travel-list",
       live: "https://anuoluwapofm.github.io/Travel-list/",
     },
@@ -27,12 +27,13 @@ const Projects = () => {
       title: "MediTrack App",
       description:
         "A mobile app for tracking medication schedules and managing health information.",
-      // UPDATED PATH HERE
-      image: `${import.meta.env.BASE_URL}images/splash_screen.png`,
+      // UPDATED: Path simplified for Vercel
+      image: "/images/splash_screen.png",
       github: "https://github.com/Anuoluwapofm/MediTrack",
       live: "https://anuoluwapofm.github.io/MediTrack/",
     },
   ];
+
   return (
     <section
       id="projects"
@@ -57,18 +58,19 @@ const Projects = () => {
             <div className="relative h-64 overflow-hidden bg-[#1a1a1a] flex items-center justify-center">
               {project.isPizzaProject ? (
                 <div className="relative w-full h-full flex items-center justify-center bg-orange-50/5">
+                  {/* UPDATED: Simplified pizza image paths */}
                   <img
-                    src="images/pizzas/margherita.jpg"
+                    src="/images/pizzas/margherita.jpg"
                     className="w-28 h-28 rounded-full object-cover shadow-2xl animate-stroll z-20 border-4 border-[#222222]"
                     alt="pizza"
                   />
                   <img
-                    src="images/pizzas/prosciutto.jpg"
+                    src="/images/pizzas/prosciutto.jpg"
                     className="absolute top-6 left-6 w-16 h-16 rounded-full object-cover opacity-60 animate-stroll delay-1 z-10"
                     alt="pizza"
                   />
                   <img
-                    src="images/pizzas/focaccia.jpg"
+                    src="/images/pizzas/focaccia.jpg"
                     className="absolute bottom-6 right-6 w-20 h-20 rounded-full object-cover opacity-40 animate-stroll delay-2 z-10"
                     alt="pizza"
                   />

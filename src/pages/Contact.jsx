@@ -20,8 +20,8 @@ const Contact = () => {
             <div className="inline-flex items-center gap-4 p-6 bg-slate-50 rounded-[2rem] border border-slate-100 w-fit">
               <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center p-2 shadow-sm">
                 <img
-                  /* UPDATED: Added Base URL for GitHub Pages */
-                  src={`${import.meta.env.BASE_URL}images/gmail_icon.png`}
+                  /* UPDATED: Simplified path for Vercel */
+                  src="/images/gmail_icon.png"
                   alt="Gmail"
                   className="w-full h-full object-contain"
                 />
@@ -40,43 +40,72 @@ const Contact = () => {
               </div>
             </div>
           </div>
-
           {/* RIGHT SIDE: Contact Form */}
           <div className="bg-slate-50 p-8 md:p-12 rounded-[2.5rem] border border-slate-100 shadow-sm">
-            <form className="space-y-6">
+            <form
+              action=" https://formspree.io/f/xqegbank" // Paste your link here
+              method="POST"
+              className="space-y-6"
+            >
               <div className="grid md:grid-cols-2 gap-6">
+                {/* Name Field */}
                 <div className="space-y-2">
-                  <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">
+                  <label
+                    htmlFor="name"
+                    className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1"
+                  >
                     Your Name
                   </label>
                   <input
+                    id="name"
+                    name="name"
                     type="text"
+                    autoComplete="name" // Tells browser this is the full name field
                     placeholder="Name"
                     className="w-full px-5 py-4 rounded-2xl border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-blue-600 outline-none transition-all bg-white"
                   />
                 </div>
+
+                {/* Email Field */}
                 <div className="space-y-2">
-                  <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">
+                  <label
+                    htmlFor="email"
+                    className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1"
+                  >
                     Your Email
                   </label>
                   <input
+                    id="email"
+                    name="email"
                     type="email"
+                    autoComplete="email" // Tells browser this is the email field
                     placeholder="Email"
                     className="w-full px-5 py-4 rounded-2xl border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-blue-600 outline-none transition-all bg-white"
                   />
                 </div>
               </div>
+
+              {/* Message Field */}
               <div className="space-y-2">
-                <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">
+                <label
+                  htmlFor="message"
+                  className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1"
+                >
                   Message
                 </label>
                 <textarea
+                  id="message"
+                  name="message"
                   rows="4"
                   placeholder="How can I help you?"
                   className="w-full px-5 py-4 rounded-2xl border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-blue-600 outline-none transition-all resize-none bg-white"
                 ></textarea>
               </div>
-              <button className="w-full bg-blue-600 text-white font-black py-5 rounded-2xl hover:bg-slate-900 transition-all shadow-xl shadow-blue-100 hover:shadow-slate-200 uppercase tracking-widest text-sm">
+
+              <button
+                type="submit"
+                className="w-full bg-blue-600 text-white font-black py-5 rounded-2xl hover:bg-slate-900 transition-all shadow-xl shadow-blue-100 hover:shadow-slate-200 uppercase tracking-widest text-sm"
+              >
                 Send Message
               </button>
             </form>
